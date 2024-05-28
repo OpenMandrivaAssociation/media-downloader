@@ -6,7 +6,7 @@ License:        GPL-2.0-or-later
 URL:            https://github.com/mhogomchungu/media-downloader
 Source0:       https://github.com/mhogomchungu/media-downloader/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
 BuildSystem:	cmake
-BuildOption: -DBUILD_WITH_QT6
+BuildOption: -DBUILD_WITH_QT6=ON
 BuildRequires:  cmake
 BuildRequires:  cmake(Qt6Core)
 BuildRequires:  cmake(Qt6Network)
