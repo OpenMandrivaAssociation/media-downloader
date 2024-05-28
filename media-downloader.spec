@@ -41,8 +41,7 @@ Features offered:-
 
 #find_lang %{name} --all-name --with-qt
 
-%files 
-#-f %{name}.lang
+%files -f %{name}.lang
 %doc README.md
 %license LICENSE
 %{_bindir}/%{name}
