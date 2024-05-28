@@ -1,14 +1,16 @@
 Name:           media-downloader
-Version:        4.5.0
-Release:        1%{?dist}
-Summary:        GUI frontend to multiple CLI based downloading programs
+Version:        4.7.0
+Release:        1
+Summary:        Media Downloader is a Qt/C++ front end to yt-dlp, youtube-dl, gallery-dl, lux, you-get, svtplay-dl, aria2c, wget and safari books.. 
 License:        GPL-2.0-or-later
 URL:            https://github.com/mhogomchungu/media-downloader
-Source0:        %url/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
-
+Source0:       https://github.com/mhogomchungu/media-downloader/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
+BuildSystem:	cmake
+BuildOption: -DBUILD_WITH_QT6
 BuildRequires:  cmake
-BuildRequires:  gcc-c++
-BuildRequires:  qt5-qtbase-devel
+BuildRequires:  cmake(Qt6Core)
+BuildRequires:  cmake(Qt6Network)
+BuildRequires:  cmake(Qt6Widgets)
 BuildRequires:  desktop-file-utils
 Requires: yt-dlp
 Requires: aria2
@@ -37,23 +39,7 @@ Features offered:-
     supported languages are English, Chinese, Spanish, Polish, Turkish, Russian,
     Japanese, French and Italian.
 
-%prep
-%autosetup -p0 -n %{name}-%{version}
-
-%build
-mkdir build && pushd build
-%cmake  -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=release ..
-%cmake_build
-popd
-
-%install
-pushd build
-%cmake_install
-popd
 %find_lang %{name} --all-name --with-qt
-
-%check
-desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files -f %{name}.lang
 %doc README.md
