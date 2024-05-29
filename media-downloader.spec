@@ -5,8 +5,7 @@ Summary:        Media Downloader is a Qt/C++ front end to yt-dlp, youtube-dl, ga
 License:        GPL-2.0-or-later
 URL:            https://github.com/mhogomchungu/media-downloader
 Source0:       https://github.com/mhogomchungu/media-downloader/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
-BuildSystem:	cmake
-BuildOption: -DBUILD_WITH_QT6=ON
+
 BuildRequires:  cmake
 BuildRequires:  cmake(Qt6Core)
 BuildRequires:  cmake(Qt6Network)
@@ -38,6 +37,17 @@ Features offered:-
  7. The GUI is offered in multiple languages and as of this writing, the
     supported languages are English, Chinese, Spanish, Polish, Turkish, Russian,
     Japanese, French and Italian.
+
+%prep
+%autosetup -p1 -n %{name}-%{version}
+
+%build
+%cmake -DBUILD_WITH_QT6=ON
+%make_build
+
+%install
+%make_install -C build
+%find_lang %{name} --all-name --with-qt
 
 #find_lang %{name} --all-name --with-qt
 
