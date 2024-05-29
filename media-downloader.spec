@@ -39,7 +39,9 @@ Features offered:-
     supported languages are English, Chinese, Spanish, Polish, Turkish, Russian,
     Japanese, French and Italian.
 
-#find_lang %{name} --all-name --with-qt
+%install -a
+
+%find_lang %{name} --all-name --with-qt
 
 %files -f %{name}.lang
 %doc README.md
