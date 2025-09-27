@@ -1,7 +1,7 @@
 Name:           media-downloader
-Version:        5.4.1
+Version:        5.4.2
 Release:        1
-Summary:        Media Downloader is a Qt/C++ front end to yt-dlp, youtube-dl, gallery-dl, lux, you-get, svtplay-dl, aria2c, wget and safari books.. 
+Summary:        A Qt/C++ front end to yt-dlp, youtube-dl and many more
 License:        GPL-2.0-or-later
 URL:            https://github.com/mhogomchungu/media-downloader
 Source0:       https://github.com/mhogomchungu/media-downloader/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
