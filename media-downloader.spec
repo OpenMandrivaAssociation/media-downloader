@@ -1,5 +1,5 @@
 Name:           media-downloader
-Version:        5.4.4
+Version:        5.4.6
 Release:        1
 Summary:        A Qt/C++ front end to yt-dlp, youtube-dl and many more
 License:        GPL-2.0-or-later
